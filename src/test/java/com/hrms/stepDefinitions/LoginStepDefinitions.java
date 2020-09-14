@@ -10,11 +10,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LoginStepDefinitions extends CommonMethods {
-	@Given("go to HRMS login page")                 //precondition
-	public void go_to_hrms_login_page() {
-	    setUp();
-	}
-
+	//@Given, @Then..are scenario steps 
+	
 	@When("login with valid credentials")           //action
 	public void login_with_valid_credentials() {
 		//sendText() from CommonMethods class with parameters usernametextbox from login page; the value of the key username
@@ -29,11 +26,6 @@ public class LoginStepDefinitions extends CommonMethods {
 		//hard assertion of the welcome element from dashboard class inintialized in PageInitilaizer class
 	   Assert.assertTrue(dash.welcome.isDisplayed());  //import from org.junit
 	}
-
-	@Then("quit the browser")                       //And keyword => continuation of the result
-	public void quit_the_browser() {
-	    tearDown();
-	}
 	
 	@When("login with invalid credentials")         //Given and And are repeated in feature file so they are not shown anymore as snippets
 	public void login_with_invalid_credentials() {
@@ -44,7 +36,8 @@ public class LoginStepDefinitions extends CommonMethods {
 	@Then("verify the error message")
 	public void verify_the_error_message() {
 	    Assert.assertTrue(login.spanMessage.isDisplayed());
-	}
+	}    
+	
 	
 	@When("login with empty username")
 	public void login_with_empty_username() {

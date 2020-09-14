@@ -177,7 +177,7 @@ public class CommonMethods extends PageInitializer {
 	 * takes screenshots and giving the time stamp
 	 * @param fileName
 	 */
-	public static void takeScreenshot(String fileName) {
+	public static void takeScreenshotFile(String fileName) {
 
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
@@ -187,6 +187,27 @@ public class CommonMethods extends PageInitializer {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Method that will take a screenshot and store with name in specified location with .png extension
+	 * @param fileName
+	 */
+	public static byte[] takeScreenshot(String fileName) {
+
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		byte[] bytes = ts.getScreenshotAs(OutputType.BYTES);
+		
+		File src = ts.getScreenshotAs(OutputType.FILE);
+		try {
+			FileUtils.copyFile(src, new File(Constants.SCREENSHOT_FILEPATH + fileName +getTimeStamp()+ ".png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return bytes;  
+		
+	}
+	
 	/**
 	 * this returns number of milliseconds since January 1, 1970/ we don't need it
 	 */

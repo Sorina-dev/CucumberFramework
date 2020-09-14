@@ -23,7 +23,7 @@ public class BaseClass {
 	 * by passing the CONFIGURATION_FILEPATH from Constants class(utils)
 	 */
 	  
-	public void setUp() {             
+	public static void setUp() {             
 		
 		ConfigsReader.readProperties(Constants.CONFIGURATION_FILEPATH);
 		
@@ -56,7 +56,7 @@ public class BaseClass {
 	 * @method - to quit the browser, it quits only if the page is open
 	 */
 	   
-	public void tearDown() {
+	public static void tearDown() {
 		if(driver != null) {
 			driver.quit();
 			
