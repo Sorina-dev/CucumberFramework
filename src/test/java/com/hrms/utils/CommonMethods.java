@@ -5,10 +5,12 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.OutputType;
@@ -31,6 +33,19 @@ public class CommonMethods extends PageInitializer {
 		element.clear();
 		element.sendKeys(text);
 	}
+	/**
+	 * Method that sends text to any given element and need to press Enter Key 
+	 * @param element
+	 * @param text
+	 * @param Enter
+	 */
+	public static void sendTextEnter(WebElement element, String text) {
+		element.clear();
+		element.sendKeys( text);
+		element.sendKeys(Keys.TAB);
+		element.sendKeys(Keys.ENTER);
+	}
+
 
 	/**
 	 * Method return Object of JavaScript Executor type
@@ -84,6 +99,15 @@ public class CommonMethods extends PageInitializer {
 	public static void waitForVisibility(WebElement element) {
 	getWaitObject().until(ExpectedConditions.visibilityOf(element));
 	}
+	
+	/**
+	 * method to wait until is List of elements is visible
+	 * @param element
+	 */
+	public static void waitForVisibilityofList(List<WebElement> list) {
+	getWaitObject().until(ExpectedConditions.visibilityOfAllElements(list));
+	}
+	
 	/**
 	 * method to wait until is element clickable
 	 * @param element

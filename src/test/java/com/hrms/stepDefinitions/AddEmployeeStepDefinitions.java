@@ -30,10 +30,10 @@ public class AddEmployeeStepDefinitions extends CommonMethods {
 	public void input_the_employee_Full_Name() {
 		waitForVisibility(addEmp.firstNameField);
 		sendText(addEmp.firstNameField, "Marin");
-		waitForVisibility(addEmp.middleName);
-		sendText(addEmp.middleName, "M");
-		waitForVisibility(addEmp.lastName);
-		sendText(addEmp.lastName, "Stegarescu");
+		waitForVisibility(addEmp.middleNameField);
+		sendText(addEmp.middleNameField, "M");
+		waitForVisibility(addEmp.lastNameField);
+		sendText(addEmp.lastNameField, "Stegarescu");
 		click(addEmp.saveButton);
 	}
 
@@ -51,10 +51,10 @@ public class AddEmployeeStepDefinitions extends CommonMethods {
 	public void input_the_employee_login_details() {
 		waitForVisibility(addEmp.firstNameField);
 		sendText(addEmp.firstNameField, "Alexa");
-		waitForVisibility(addEmp.middleName);
-		sendText(addEmp.middleName, "C");
-		waitForVisibility(addEmp.lastName);
-		sendText(addEmp.lastName, "Benefacio");
+		waitForVisibility(addEmp.middleNameField);
+		sendText(addEmp.middleNameField, "C");
+		waitForVisibility(addEmp.lastNameField);
+		sendText(addEmp.lastNameField, "Benefacio");
 		click(addEmp.createLoginDetailsCheckbox);
 		sendText(addEmp.userName, "Alexa156");
 		sendText(addEmp.userPassword, "Djerg25$%*#@");
@@ -70,4 +70,43 @@ public class AddEmployeeStepDefinitions extends CommonMethods {
 		waitForVisibility(persDetails.progilePicText);
 		Assert.assertEquals(persDetails.progilePicText.getText(), firstName + " " + middleName + " " + lastName);
 	}
-}
+
+	//PARAMETERIZATION
+	
+	@When("enter first name as {string} middle name as {string} and last name as {string}")
+	public void enter_first_name_as_middle_name_as_and_last_name_as(String firstName, String middleName,
+			String lastName) {
+		sendText(addEmp.firstNameField, firstName);
+		sendText(addEmp.middleNameField, middleName);
+		sendText(addEmp.lastNameField, lastName);
+	}
+	
+	@Then("verify that {string} is added successfully")
+	public void verify_that_is_added_successfully(String fullName) {
+		String profileName = persDetails.progilePicText.getText();
+		Assert.assertEquals(fullName, profileName);
+	}
+	
+	//Data Driven testing, when you do the same function using different data
+	
+	@When("enter employee {string}, {string} and {string}")
+	public void enter_employee_and(String firstName, String middleName, String lastName) {
+		sendText(addEmp.firstNameField, firstName);
+		sendText(addEmp.middleNameField, middleName);
+		sendText(addEmp.lastNameField, lastName);
+	}
+
+	@Then("click on save Button")
+	public void click_on_save_Button() {
+		click(addEmp.saveButton);
+	}
+
+	@Then("verify that {string}, {string} and {string} is successfully added")
+	public void verify_that_and_is_successfully_added(String firstName, String middleName, String lastName) {
+		String fullName = firstName + " " + middleName + " " + lastName;
+		String fullProfileName = persDetails.progilePicText.getText();
+		Assert.assertEquals(fullName, fullProfileName);
+	}
+
+	}
+

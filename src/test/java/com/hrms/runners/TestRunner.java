@@ -9,12 +9,12 @@ import io.cucumber.junit.CucumberOptions;
 //annotation to set the options in order to run
 
 @RunWith(Cucumber.class) 
-@CucumberOptions(features = "src\\test\\resources\\features\\Login.feature",//need to give a path for our feature files
+@CucumberOptions(features = "src\\test\\resources\\features\\",//need to give a path for our feature files
               //forward slash instead dots
 		glue = "com/hrms/stepDefinitions", // we need to glue our step definitions 
-		dryRun = false, //by default its false	//with dryRun if its true its gonna show the snippet we have to implement if we change a step in features file							
+		dryRun = false,// while dryRun is true it will put in console onlye snippets , but wont run the test		
 		monochrome = true,// when set as true will format the console outcome, it changes unrecognized characters from console output into numbers
-		tags= "@smoke", // use tags to run only one or some scenarios
+		tags= "@byName", // use tags to run only one or some scenarios
 		strict = false, //if set on true it will fail the test if there is one unimplemented method and show the snippet
 		plugin = {"pretty",  //will print all steps inside the console
 				"html:target/cucumber-default-reports",//refresh the project and see in target folder , we need index.html  it generates html report
