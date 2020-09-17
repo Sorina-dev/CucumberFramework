@@ -129,8 +129,7 @@ formatter.match({
   "location": "com.hrms.stepDefinitions.SearchEmployeeStepDefinitions.validate_the_user_name(java.lang.String)"
 });
 formatter.result({
-  "error_message": "java.lang.AssertionError: The following asserts failed:\n\texpected [Anne Smith] but found [Elijah Green \u003cLast Name\u003e]\r\n\tat org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)\r\n\tat org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)\r\n\tat com.hrms.stepDefinitions.SearchEmployeeStepDefinitions.validate_the_user_name(SearchEmployeeStepDefinitions.java:82)\r\n\tat ✽.validate the user name \"Anne Smith\"(file:///C:/Users/crist/eclipse-workspace/CucumberFrameworkBatch7/src/test/resources/features/SearchEmployee.feature:25)\r\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.embedding("image/png", "embedded0.png", "search the employees by name");
 formatter.after({
@@ -202,8 +201,7 @@ formatter.match({
   "location": "com.hrms.stepDefinitions.SearchEmployeeStepDefinitions.validate_the_user_name(java.lang.String)"
 });
 formatter.result({
-  "error_message": "java.lang.AssertionError: The following asserts failed:\n\texpected [Andrew Locksmith] but found [Elijah Green \u003cLast Name\u003e]\r\n\tat org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)\r\n\tat org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)\r\n\tat com.hrms.stepDefinitions.SearchEmployeeStepDefinitions.validate_the_user_name(SearchEmployeeStepDefinitions.java:82)\r\n\tat ✽.validate the user name \"Andrew Locksmith\"(file:///C:/Users/crist/eclipse-workspace/CucumberFrameworkBatch7/src/test/resources/features/SearchEmployee.feature:25)\r\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.embedding("image/png", "embedded1.png", "search the employees by name");
 formatter.after({
@@ -275,8 +273,7 @@ formatter.match({
   "location": "com.hrms.stepDefinitions.SearchEmployeeStepDefinitions.validate_the_user_name(java.lang.String)"
 });
 formatter.result({
-  "error_message": "java.lang.AssertionError: The following asserts failed:\n\texpected [Benjamin Mathers] but found [Elijah Green \u003cLast Name\u003e]\r\n\tat org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)\r\n\tat org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)\r\n\tat com.hrms.stepDefinitions.SearchEmployeeStepDefinitions.validate_the_user_name(SearchEmployeeStepDefinitions.java:82)\r\n\tat ✽.validate the user name \"Benjamin Mathers\"(file:///C:/Users/crist/eclipse-workspace/CucumberFrameworkBatch7/src/test/resources/features/SearchEmployee.feature:25)\r\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.embedding("image/png", "embedded2.png", "search the employees by name");
 formatter.after({
@@ -421,8 +418,7 @@ formatter.match({
   "location": "com.hrms.stepDefinitions.SearchEmployeeStepDefinitions.validate_the_user_name(java.lang.String)"
 });
 formatter.result({
-  "error_message": "java.lang.AssertionError: The following asserts failed:\n\texpected [Jessie Rodrigues] but found [Elijah Green \u003cLast Name\u003e]\r\n\tat org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)\r\n\tat org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)\r\n\tat com.hrms.stepDefinitions.SearchEmployeeStepDefinitions.validate_the_user_name(SearchEmployeeStepDefinitions.java:82)\r\n\tat ✽.validate the user name \"Jessie Rodrigues\"(file:///C:/Users/crist/eclipse-workspace/CucumberFrameworkBatch7/src/test/resources/features/SearchEmployee.feature:25)\r\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.embedding("image/png", "embedded4.png", "search the employees by name");
 formatter.after({
