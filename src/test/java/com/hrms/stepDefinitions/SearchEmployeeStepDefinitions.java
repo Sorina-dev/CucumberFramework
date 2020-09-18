@@ -1,11 +1,5 @@
 package com.hrms.stepDefinitions;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.asserts.SoftAssert;
 
 import com.hrms.utils.CommonMethods;

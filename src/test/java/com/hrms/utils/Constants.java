@@ -4,7 +4,7 @@ public class Constants {
 
 	public static final String CONFIGURATION_FILEPATH=System.getProperty("user.dir")+"\\src\\test\\resources\\configs\\configuration.properties";
 	
-	public static final String TESTDATA_FILEPATH=System.getProperty("user.dir")+"\\src\\test\\resources\\testdata\\SyntaxHRMS.xlsx";//windows users /and .exe
+	public static final String TESTDATA_FILEPATH=System.getProperty("user.dir")+"\\src\\test\\resources\\testdata\\SyntaxHRMS1.xlsx";//windows users /and .exe
 
 	public static final int IMPLICIT_WAIT_TIME=10;
 	
