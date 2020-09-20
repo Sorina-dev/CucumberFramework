@@ -76,7 +76,7 @@ public class AddEmployeeStepDefinitions extends CommonMethods {
 		Assert.assertEquals(persDetails.progilePicText.getText(), firstName + " " + middleName + " " + lastName);
 	}
 
-	//PARAMETERIZATION
+	//PARAMETERIZATION using scenario outline
 	
 	@When("enter first name as {string} middle name as {string} and last name as {string}")
 	public void enter_first_name_as_middle_name_as_and_last_name_as(String firstName, String middleName,
@@ -113,7 +113,7 @@ public class AddEmployeeStepDefinitions extends CommonMethods {
 		Assert.assertEquals(fullName, fullProfileName);
 	}
 	
-
+      //using Data table 
 	@When("add multiple employees and verify they are added")   //import io.cucumber.datatable.DataTable;
 	public void add_multiple_employees_and_verify_they_are_added(DataTable employees) throws InterruptedException {
 		List<Map<String, String>>employeeNames = employees.asMaps();//cuz it have headers and data/ values and keys in feature file
