@@ -117,7 +117,7 @@ public class AddEmployeeStepDefinitions extends CommonMethods {
 	@When("add multiple employees and verify they are added")   //import io.cucumber.datatable.DataTable;
 	public void add_multiple_employees_and_verify_they_are_added(DataTable employees) throws InterruptedException {
 		List<Map<String, String>>employeeNames = employees.asMaps();//cuz it have headers and data/ values and keys in feature file
-		//adding employees via Scenario outline with headers
+		//adding employees via data table with headers
 		for (Map<String, String> employeeName : employeeNames) {
 			String firstName = employeeName.get("First Name"); //get the values
 			String middleName = employeeName.get("Middle Name");

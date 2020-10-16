@@ -16,6 +16,7 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -32,6 +33,7 @@ public class CommonMethods extends PageInitializer {
 	 * @param element
 	 * @param text
 	 */
+	
 	public static void sendText(WebElement element, String text) {
 		element.clear();
 		element.sendKeys(text);
