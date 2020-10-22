@@ -25,6 +25,7 @@ public class Homework1 {
 		Connection conn = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
 		Statement st = conn.createStatement();
 		ResultSet rs = st.executeQuery("select * from ohrm_job_title;");
+		ResultSetMetaData rsMetaData = rs.getMetaData();
 		List<String> jobTitles = new ArrayList<>();
 		
 		while(rs.next()) {
@@ -36,7 +37,7 @@ public class Homework1 {
 			System.out.println(j);
 		}
 		
-		ResultSetMetaData rsMetaData = rs.getMetaData();
+		
 		String columnTypeName = rsMetaData.getColumnTypeName(2);
 		System.out.println("Column Type Name = " + columnTypeName);
 		

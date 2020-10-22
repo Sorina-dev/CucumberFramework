@@ -59,13 +59,14 @@ public class JDBCDemo {
 
 		Statement st = conn.createStatement(); //interface
 		ResultSet rs = st.executeQuery("select * from ohrm_nationality");  //interface
+		//create an arraylist of strings and add the objects converted to string
 		List<String> nationalities = new ArrayList<>();
 
 		while (rs.next()) {
 			String nationality = rs.getObject("name").toString();
 			nationalities.add(nationality);
 		}
-
+     //   retrieve and print the strings from the arraylist
 		for (String nat : nationalities) {
 			System.out.println(nat);
 		}
