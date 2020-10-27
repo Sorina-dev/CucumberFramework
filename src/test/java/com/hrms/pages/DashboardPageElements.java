@@ -28,6 +28,9 @@ public class DashboardPageElements extends BaseClass {
 
 	@FindBy(id = "menu_time_viewTimeModule")
 	public WebElement timeLinkBtn;
+	
+	@FindBy(id = "menu_time_viewJobTitleModule")
+	public WebElement jonTitlesLinkBtn;
 
 	@FindBy(id = "menu_recruitment_viewRecruitmentModule")
 	public WebElement recruitmentLinkBtn;
