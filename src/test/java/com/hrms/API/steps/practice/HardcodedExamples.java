@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import io.restassured.RestAssured; //from her the static packages imported manually
+import io.restassured.RestAssured; //from here the static packages imported manually
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -18,16 +18,17 @@ import static org.hamcrest.Matchers.*; //import it manually
 
 public class HardcodedExamples {
 	/*
-	 * TEST Assured - Java library specifically developed to automate REST endpoints
+	 * REST Assured - Java library specifically developed to automate REST endpoints
 	 * 
-	 * Given - Preparing your request When - What action will you perform, what type
-	 * of call are you making? Then - Verification
+	 * Given - Preparing your request; When - What action will you perform, what
+	 * type of call are you making?; Then - Verification
 	 */
 
 	/** BaseURI for all endpoints */ // concatenates automatically the base URI and the endpoints at the execution
-	String baseURI = RestAssured.baseURI = "http://18.232.148.34/syntaxapi/api"; // base URI -its base is URL
+	String baseURI = RestAssured.baseURI = "http://18.232.148.34/syntaxapi/api"; // base URI -its base is URL, we must
+																					// add - http://
 
-	/* JWT */ // generate a new token and take it from globals
+	/** JWT, generate a new token and take it from globals */
 	String token = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDM3Mzc3MDIsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTYwMzc4MDkwMiwidXNlcklkIjoiMjEwOCJ9.w10lV4crrqE5pBlkODLP79TIp84Jm8ZGL8izutktPnM";
 	static String employeeID;
 
@@ -35,8 +36,8 @@ public class HardcodedExamples {
 	public void aasampleTest() {
 
 		/**
-		 * Preparing request for / getOneEmployee.php given() method comes from static
-		 * io.restassured.RestAssured package - NEED TO IMPORT IT MANUALLY import Using
+		 * Preparing request for /getOneEmployee.php given() method comes from static
+		 * io.restassured.RestAssured* package - NEED TO IMPORT IT MANUALLY import Using
 		 * .log.all to print out everything being sent with the request
 		 */ // employee_id is the key in the Params in Postman
 		RequestSpecification preparingGetOneEmployeeRequest = given().header("Authorization", token)
@@ -46,8 +47,8 @@ public class HardcodedExamples {
 		Response getOneEmployeeResponse = preparingGetOneEmployeeRequest.when().get("/getOneEmployee.php");
 
 		/** One way to print response Object */
-		// System.out.println(getOneEmployeeResponse.asString()); //if not converted as
-		// a String it will print the object and its package
+		// System.out.println(getOneEmployeeResponse.asString());
+		// if not converted as a String it will print the object and its package
 
 		/** Second way using rest assured prettyPrint() */
 		// getOneEmployeeResponse.prettyPrint(); // will print in a readable format way
@@ -138,7 +139,7 @@ public class HardcodedExamples {
 
 		// String empID =
 		// getCreatedEmployeeResponse.body().jsonPath().getString("employee[0].employee_id");
-		// --> instead of this we create JsonPath class to gt other variables from the
+		// --> instead of this we create JsonPath class to get other variables from the
 		// response
 		/** Created object of JsonPath */
 		JsonPath js = new JsonPath(response); // its a class
@@ -174,75 +175,80 @@ public class HardcodedExamples {
 
 //	@Test
 	public void cGETallEmployees() {
-		
+
 		/** Preparing request to get all employees */
 		RequestSpecification getAllEmployeesRequest = given().header("Content-Type", "application/json")
 				.header("Authorization", token);
-		
+
 		/** Storing response into getAllEmployeesResponse */
 		Response getAllEmployeesResponse = getAllEmployeesRequest.when().get("/getAllEmployees.php");
 
 		/** printing response */
 		// getAllEmployeesResponse.prettyPrint();
 
-		/** Storing response as a String*/
+		/** Storing response as a String */
 		String response = getAllEmployeesResponse.asString();
 
-		/** Created object of JsonPath and passing response as a String as an argument */
+		/**
+		 * Created object of JsonPath and passing response as a String as an argument
+		 */
 		JsonPath js = new JsonPath(response);
-		
-        /** Retrieving the size of the array (number of the object in the array)*/
-		int count = js.getInt("Employees.size()"); 
-        // System.out.println(count);
+
+		/** Retrieving the size of the array (number of the object in the array) */
+		int count = js.getInt("Employees.size()");
+		// System.out.println(count);
 
 		/** Using for loop to retrieve all the employee_id's from the response */
-		for(int i = 0; i< count; i++) {
-			
-			String allEmployeeIDs = js.getString("Employees["+i+"].employee_id");
-			
+		for (int i = 0; i < count; i++) {
+
+			String allEmployeeIDs = js.getString("Employees[" + i + "].employee_id");
+
 //			//System.out.println(allEmployeeIDs);
-			
-			/** Using conditional IF to retrieve emp_firstname if there is that certain employee ID */
-			if(allEmployeeIDs.contentEquals(employeeID)) {
-				
-				System.out.println("Employee ID: "+ employeeID + " is present in the body");
-				String firstNameOfEmpID = js.getString("Employees["+ i+ "].emp_firstname");
-			//	System.out.println(firstNameOfEmpID);
+
+			/**
+			 * Using conditional IF to retrieve emp_firstname if there is that certain
+			 * employee ID
+			 */
+			if (allEmployeeIDs.contentEquals(employeeID)) {
+
+				System.out.println("Employee ID: " + employeeID + " is present in the body");
+				String firstNameOfEmpID = js.getString("Employees[" + i + "].emp_firstname");
+				// System.out.println(firstNameOfEmpID);
 				break;
 			}
 		}
 		/** Using for loop to print out first names of all employees */
-		for(int i = 0; i < count; i++) {
-			String allFirstNames = js.getString("Employees["+ i+ "].emp_firstname");
-		//	System.out.println(allFirstNames);
+		for (int i = 0; i < count; i++) {
+			String allFirstNames = js.getString("Employees[" + i + "].emp_firstname");
+			// System.out.println(allFirstNames);
 		}
 	}
 
 	@Test
 	public void dPUTupdateCreatedEmployee() {
 
-		RequestSpecification putUpdateCreatedEmployeeRequest = given().header("Content-Type", "application/json").header("Authorization", token).body("{\r\n" + 
-				"  \"employee_id\": \"" + employeeID + "\",\r\n" +   //pay attention at quotations
-				"  \"emp_firstname\": \"Meryemm\",\r\n" + 
-				"  \"emp_lastname\": \"AKCAY\",\r\n" + 
-				"  \"emp_middle_name\": \" \",\r\n" + 
-				"  \"emp_gender\": \"F\",\r\n" + 
-				"  \"emp_birthday\": \"1993-02-16\",\r\n" + 
-				"  \"emp_status\": \"Employee\",\r\n" + 
-				"  \"emp_job_title\": \"Cloud Architect\"\r\n" + 
-				"}").log().all();
-		/** Storing request into putUpdateCreatedEmployeeResponse Response*/
-		Response putUpdateCreatedEmployeeResponse =  putUpdateCreatedEmployeeRequest.when().put("/updateEmployee.php");
-		
+		RequestSpecification putUpdateCreatedEmployeeRequest = given().header("Content-Type", "application/json")
+				.header("Authorization", token).body("{\r\n" + "  \"employee_id\": \"" + employeeID + "\",\r\n" + // pay
+																													// attention
+																													// at
+																													// quotations
+						"  \"emp_firstname\": \"Meryemm\",\r\n" + "  \"emp_lastname\": \"AKCAY\",\r\n"
+						+ "  \"emp_middle_name\": \" \",\r\n" + "  \"emp_gender\": \"F\",\r\n"
+						+ "  \"emp_birthday\": \"1993-02-16\",\r\n" + "  \"emp_status\": \"Employee\",\r\n"
+						+ "  \"emp_job_title\": \"Cloud Architect\"\r\n" + "}")
+				.log().all();
+		/** Storing request into putUpdateCreatedEmployeeResponse Response */
+		Response putUpdateCreatedEmployeeResponse = putUpdateCreatedEmployeeRequest.when().put("/updateEmployee.php");
+
 		/** Printing response */
 		putUpdateCreatedEmployeeResponse.prettyPrint();
-		
+
 		/** Storing response as a String */
 		String response = putUpdateCreatedEmployeeResponse.asString();
-		
+
 		/** Creating JsonPath object */
 		JsonPath js = new JsonPath(response);
-		
+
 		/** Storing employee details into String variables using 'js' */
 		String employeeId = js.getString("employee[0].employee_id");
 		String firstName = js.getString("employee[0].emp_firstname");
@@ -253,7 +259,7 @@ public class HardcodedExamples {
 		String jobTitle = js.getString("employee[0].emp_job_title");
 		String status = js.getString("employee[0].emp_status");
 
-        /** Asserting the rest of the values match expected data */
+		/** Asserting the rest of the values match expected data */
 		Assert.assertTrue(employeeId.contentEquals(employeeID));
 		Assert.assertEquals(firstName, "Meryemm");
 		Assert.assertEquals(middleName, " ");
@@ -262,7 +268,6 @@ public class HardcodedExamples {
 		Assert.assertEquals(gender, "Female");
 		Assert.assertEquals(status, "Employee");
 		Assert.assertEquals(jobTitle, "Cloud Architect");
-	
-	
+
 	}
 }

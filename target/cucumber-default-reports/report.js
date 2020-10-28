@@ -1,45 +1,243 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/Login.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/APIWorkflow.feature");
 formatter.feature({
-  "name": "Login Functionality",
+  "name": "Syntax HRMS API Workflow",
+  "description": "Description: This feature file tests Syntax HRMS API Workflow",
+  "keyword": "Feature",
+  "tags": [
+    {
+      "name": "@APIworkflow"
+    }
+  ]
+});
+formatter.background({
+  "name": "",
   "description": "",
-  "keyword": "Feature"
+  "keyword": "Background"
+});
+formatter.step({
+  "name": "a JWT id generated",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.GenerateTokenSteps.a_JWT_id_generated()"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.scenario({
-  "name": "Login with invalid credentials",
+  "name": "Creating an employee",
   "description": "",
   "keyword": "Scenario",
   "tags": [
     {
-      "name": "@smoke"
+      "name": "@APIworkflow"
     }
   ]
 });
-formatter.before({
-  "error_message": "org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.001\n  (Session info: chrome\u003d86.0.4240.111)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027LAPTOP-DJC8OLDO\u0027, ip: \u0027192.168.1.155\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_251\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.111, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: C:\\Users\\crist\\AppData\\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:61906}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 6354365757df291d63aed232093c3d92\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.lang.reflect.Constructor.newInstance(Constructor.java:423)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:857)\r\n\tat com.hrms.testbase.BaseClass.setUp(BaseClass.java:50)\r\n\tat com.hrms.stepDefinitions.Hooks.startTest(Hooks.java:18)\r\n",
-  "status": "failed"
+formatter.step({
+  "name": "a request is prepared to create an employee",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.a_request_is_prepared_to_create_an_employee()"
+});
+formatter.result({
+  "status": "passed"
 });
 formatter.step({
-  "name": "login with invalid credentials",
+  "name": "a POST call is made to create an employee",
   "keyword": "When "
 });
 formatter.match({
-  "location": "com.hrms.stepDefinitions.LoginStepDefinitions.login_with_invalid_credentials()"
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.a_POST_call_is_made_to_create_an_employee()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "verify the error message",
+  "name": "the status code for creating an employee 201",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "com.hrms.stepDefinitions.LoginStepDefinitions.verify_the_error_message()"
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_status_code_for_creating_an_employee(int)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
-formatter.embedding("image/png", "embedded0.png", "Login with invalid credentials");
-formatter.after({
+formatter.step({
+  "name": "the employee is created contains key \"Message\" and value \"Entry Created\"",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_employee_is_created_contains_key_and_value(java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the employee ID \"Employee[0].employee_id\" is stored as a global variable to be used for other calls",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_employee_ID_is_stored_as_a_global_variable_to_be_used_for_other_calls(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.background({
+  "name": "",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.step({
+  "name": "a JWT id generated",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.GenerateTokenSteps.a_JWT_id_generated()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Retrieving created employee",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@APIworkflow"
+    },
+    {
+      "name": "@Pogression"
+    }
+  ]
+});
+formatter.step({
+  "name": "a request is prepared to retrieve the created employee",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.a_request_is_prepared_to_retrieve_the_created_employee()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "a GET call is made to retrieve the created employee",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.a_GET_call_is_made_to_retrieve_the_created_employee()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the status code for retrieving the created employee is 200",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_status_code_for_retrieving_the_created_employee_is(java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the retrieved employee ID matches the globally stored employee ID",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieved_employee_ID_matches_the_globally_stored_employee_ID()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the retrieve data matches the data used to create an employee",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieve_data_matches_the_data_used_to_create_an_employee()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.background({
+  "name": "",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.step({
+  "name": "a JWT id generated",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.GenerateTokenSteps.a_JWT_id_generated()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
+  "name": "Retrieving all employees and verifying that created employee details display in the response",
+  "description": "",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@APIworkflow"
+    },
+    {
+      "name": "@Pogression"
+    }
+  ]
+});
+formatter.step({
+  "name": "a request is prepared to retrieve all employees",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.a_request_is_prepared_to_retrieve_all_employees()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "a GET call is made to retrieve all employees",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.a_GET_call_is_made_to_retrieve_all_employees()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the status code for retrieving all employees is 200",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_status_code_for_retrieving_all_employees_is(java.lang.Integer)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the retrieve data contains the globally stored employee ID",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieve_data_contains_the_globally_stored_employee_ID()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "the retrieve data matches the data that was used to create an employee",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieve_data_matches_the_data_that_was_used_to_create_an_employee()"
+});
+formatter.result({
   "status": "passed"
 });
 });
