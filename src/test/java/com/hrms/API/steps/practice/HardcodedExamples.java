@@ -37,8 +37,8 @@ public class HardcodedExamples {
 
 		/**
 		 * Preparing request for /getOneEmployee.php given() method comes from static
-		 * io.restassured.RestAssured* package - NEED TO IMPORT IT MANUALLY import Using
-		 * .log.all to print out everything being sent with the request
+		 * io.restassured.RestAssured* package - NEED TO IMPORT IT MANUALLY import 
+		 * Using .log.all to print out everything being sent with the request
 		 */ // employee_id is the key in the Params in Postman
 		RequestSpecification preparingGetOneEmployeeRequest = given().header("Authorization", token)
 				.header("Content-Type", "application/json").queryParam("employee_id", "27282A").log().all();

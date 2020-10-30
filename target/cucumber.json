@@ -1,9 +1,9 @@
 [
   {
-    "line": 4,
+    "line": 3,
     "elements": [
       {
-        "line": 7,
+        "line": 6,
         "name": "",
         "description": "",
         "type": "background",
@@ -11,10 +11,10 @@
         "steps": [
           {
             "result": {
-              "duration": 2590000000,
+              "duration": 2512000000,
               "status": "passed"
             },
-            "line": 8,
+            "line": 7,
             "name": "a JWT id generated",
             "match": {
               "location": "com.hrms.API.Final.steps.GenerateTokenSteps.a_JWT_id_generated()"
@@ -24,8 +24,8 @@
         ]
       },
       {
-        "start_timestamp": "2020-10-28T10:16:31.577Z",
-        "line": 10,
+        "start_timestamp": "2020-10-30T15:48:33.230Z",
+        "line": 9,
         "name": "Creating an employee",
         "description": "",
         "id": "syntax-hrms-api-workflow;creating-an-employee",
@@ -34,10 +34,10 @@
         "steps": [
           {
             "result": {
-              "duration": 11000000,
+              "duration": 4000000,
               "status": "passed"
             },
-            "line": 11,
+            "line": 10,
             "name": "a request is prepared to create an employee",
             "match": {
               "location": "com.hrms.API.Final.steps.APIFinalSteps.a_request_is_prepared_to_create_an_employee()"
@@ -46,10 +46,10 @@
           },
           {
             "result": {
-              "duration": 324000000,
+              "duration": 304000000,
               "status": "passed"
             },
-            "line": 12,
+            "line": 11,
             "name": "a POST call is made to create an employee",
             "match": {
               "location": "com.hrms.API.Final.steps.APIFinalSteps.a_POST_call_is_made_to_create_an_employee()"
@@ -58,10 +58,10 @@
           },
           {
             "result": {
-              "duration": 46000000,
+              "duration": 103000000,
               "status": "passed"
             },
-            "line": 13,
+            "line": 12,
             "name": "the status code for creating an employee 201",
             "match": {
               "arguments": [
@@ -76,10 +76,10 @@
           },
           {
             "result": {
-              "duration": 81000000,
+              "duration": 65000000,
               "status": "passed"
             },
-            "line": 14,
+            "line": 13,
             "name": "the employee is created contains key \"Message\" and value \"Entry Created\"",
             "match": {
               "arguments": [
@@ -98,10 +98,10 @@
           },
           {
             "result": {
-              "duration": 53000000,
+              "duration": 50000000,
               "status": "passed"
             },
-            "line": 15,
+            "line": 14,
             "name": "the employee ID \"Employee[0].employee_id\" is stored as a global variable to be used for other calls",
             "match": {
               "arguments": [
@@ -122,7 +122,7 @@
         ]
       },
       {
-        "line": 7,
+        "line": 6,
         "name": "",
         "description": "",
         "type": "background",
@@ -130,10 +130,10 @@
         "steps": [
           {
             "result": {
-              "duration": 328000000,
+              "duration": 348000000,
               "status": "passed"
             },
-            "line": 8,
+            "line": 7,
             "name": "a JWT id generated",
             "match": {
               "location": "com.hrms.API.Final.steps.GenerateTokenSteps.a_JWT_id_generated()"
@@ -143,8 +143,8 @@
         ]
       },
       {
-        "start_timestamp": "2020-10-28T10:16:34.791Z",
-        "line": 18,
+        "start_timestamp": "2020-10-30T15:48:36.381Z",
+        "line": 17,
         "name": "Retrieving created employee",
         "description": "",
         "id": "syntax-hrms-api-workflow;retrieving-created-employee",
@@ -153,10 +153,10 @@
         "steps": [
           {
             "result": {
-              "duration": 4000000,
+              "duration": 21000000,
               "status": "passed"
             },
-            "line": 19,
+            "line": 18,
             "name": "a request is prepared to retrieve the created employee",
             "match": {
               "location": "com.hrms.API.Final.steps.APIFinalSteps.a_request_is_prepared_to_retrieve_the_created_employee()"
@@ -165,10 +165,10 @@
           },
           {
             "result": {
-              "duration": 1000000,
+              "duration": 345000000,
               "status": "passed"
             },
-            "line": 20,
+            "line": 19,
             "name": "a GET call is made to retrieve the created employee",
             "match": {
               "location": "com.hrms.API.Final.steps.APIFinalSteps.a_GET_call_is_made_to_retrieve_the_created_employee()"
@@ -177,10 +177,10 @@
           },
           {
             "result": {
-              "duration": 1000000,
+              "duration": 4000000,
               "status": "passed"
             },
-            "line": 21,
+            "line": 20,
             "name": "the status code for retrieving the created employee is 200",
             "match": {
               "arguments": [
@@ -189,32 +189,72 @@
                   "offset": 55
                 }
               ],
-              "location": "com.hrms.API.Final.steps.APIFinalSteps.the_status_code_for_retrieving_the_created_employee_is(java.lang.Integer)"
+              "location": "com.hrms.API.Final.steps.APIFinalSteps.the_status_code_for_retrieving_the_created_employee_is(int)"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 1000000,
+              "duration": 55000000,
               "status": "passed"
             },
-            "line": 22,
-            "name": "the retrieved employee ID matches the globally stored employee ID",
+            "line": 21,
+            "name": "the retrieved employee ID \"employee[0].employee_id\" matches the globally stored employee ID",
             "match": {
-              "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieved_employee_ID_matches_the_globally_stored_employee_ID()"
+              "arguments": [
+                {
+                  "val": "\"employee[0].employee_id\"",
+                  "offset": 26
+                }
+              ],
+              "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieved_employee_ID_matches_the_globally_stored_employee_ID(java.lang.String)"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 1000000,
+              "duration": 75000000,
               "status": "passed"
             },
-            "line": 23,
-            "name": "the retrieve data matches the data used to create an employee",
+            "line": 22,
+            "name": "the retrieved data at \"employee\" matches the data used to create an employee with employee ID \"employee[0].employee_id\"",
             "match": {
-              "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieve_data_matches_the_data_used_to_create_an_employee()"
+              "arguments": [
+                {
+                  "val": "\"employee\"",
+                  "offset": 22
+                },
+                {
+                  "val": "\"employee[0].employee_id\"",
+                  "offset": 94
+                }
+              ],
+              "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieved_data_at_matches_the_data_used_to_create_an_employee_with_employee_ID(java.lang.String,java.lang.String,io.cucumber.datatable.DataTable)"
             },
+            "rows": [
+              {
+                "cells": [
+                  "emp_firstname",
+                  "emp_middle_name",
+                  "emp_lastname",
+                  "emp_birthday",
+                  "emp_gender",
+                  "emp_status",
+                  "emp_job_title"
+                ]
+              },
+              {
+                "cells": [
+                  "Sorina",
+                  "B",
+                  "Cristian",
+                  "1987-01-20",
+                  "Female",
+                  "Independent contractor",
+                  "Cloud Architect"
+                ]
+              }
+            ],
             "keyword": "And "
           }
         ],
@@ -223,12 +263,12 @@
             "name": "@APIworkflow"
           },
           {
-            "name": "@Pogression"
+            "name": "@APIworkflow"
           }
         ]
       },
       {
-        "line": 7,
+        "line": 6,
         "name": "",
         "description": "",
         "type": "background",
@@ -236,10 +276,10 @@
         "steps": [
           {
             "result": {
-              "duration": 333000000,
+              "duration": 330000000,
               "status": "passed"
             },
-            "line": 8,
+            "line": 7,
             "name": "a JWT id generated",
             "match": {
               "location": "com.hrms.API.Final.steps.GenerateTokenSteps.a_JWT_id_generated()"
@@ -249,8 +289,8 @@
         ]
       },
       {
-        "start_timestamp": "2020-10-28T10:16:35.143Z",
-        "line": 26,
+        "start_timestamp": "2020-10-30T15:48:37.251Z",
+        "line": 27,
         "name": "Retrieving all employees and verifying that created employee details display in the response",
         "description": "",
         "id": "syntax-hrms-api-workflow;retrieving-all-employees-and-verifying-that-created-employee-details-display-in-the-response",
@@ -259,10 +299,10 @@
         "steps": [
           {
             "result": {
-              "duration": 3000000,
+              "duration": 4000000,
               "status": "passed"
             },
-            "line": 27,
+            "line": 28,
             "name": "a request is prepared to retrieve all employees",
             "match": {
               "location": "com.hrms.API.Final.steps.APIFinalSteps.a_request_is_prepared_to_retrieve_all_employees()"
@@ -271,10 +311,10 @@
           },
           {
             "result": {
-              "duration": 1000000,
+              "duration": 2000000,
               "status": "passed"
             },
-            "line": 28,
+            "line": 29,
             "name": "a GET call is made to retrieve all employees",
             "match": {
               "location": "com.hrms.API.Final.steps.APIFinalSteps.a_GET_call_is_made_to_retrieve_all_employees()"
@@ -283,10 +323,10 @@
           },
           {
             "result": {
-              "duration": 1000000,
+              "duration": 3000000,
               "status": "passed"
             },
-            "line": 29,
+            "line": 30,
             "name": "the status code for retrieving all employees is 200",
             "match": {
               "arguments": [
@@ -301,10 +341,10 @@
           },
           {
             "result": {
-              "duration": 1000000,
+              "duration": 2000000,
               "status": "passed"
             },
-            "line": 30,
+            "line": 31,
             "name": "the retrieve data contains the globally stored employee ID",
             "match": {
               "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieve_data_contains_the_globally_stored_employee_ID()"
@@ -313,10 +353,10 @@
           },
           {
             "result": {
-              "duration": 1000000,
+              "duration": 2000000,
               "status": "passed"
             },
-            "line": 31,
+            "line": 32,
             "name": "the retrieve data matches the data that was used to create an employee",
             "match": {
               "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieve_data_matches_the_data_that_was_used_to_create_an_employee()"
@@ -335,7 +375,7 @@
       }
     ],
     "name": "Syntax HRMS API Workflow",
-    "description": "Description: This feature file tests Syntax HRMS API Workflow",
+    "description": "  Description: This feature file tests Syntax HRMS API Workflow",
     "id": "syntax-hrms-api-workflow",
     "keyword": "Feature",
     "uri": "file:src/test/resources/features/APIWorkflow.feature",
@@ -344,7 +384,7 @@
         "name": "@APIworkflow",
         "type": "Tag",
         "location": {
-          "line": 3,
+          "line": 2,
           "column": 1
         }
       }

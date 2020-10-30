@@ -1,7 +1,7 @@
 $(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("file:src/test/resources/features/APIWorkflow.feature");
 formatter.feature({
   "name": "Syntax HRMS API Workflow",
-  "description": "Description: This feature file tests Syntax HRMS API Workflow",
+  "description": "  Description: This feature file tests Syntax HRMS API Workflow",
   "keyword": "Feature",
   "tags": [
     {
@@ -108,7 +108,7 @@ formatter.scenario({
       "name": "@APIworkflow"
     },
     {
-      "name": "@Pogression"
+      "name": "@APIworkflow"
     }
   ]
 });
@@ -137,27 +137,31 @@ formatter.step({
   "keyword": "Then "
 });
 formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_status_code_for_retrieving_the_created_employee_is(java.lang.Integer)"
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_status_code_for_retrieving_the_created_employee_is(int)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the retrieved employee ID matches the globally stored employee ID",
+  "name": "the retrieved employee ID \"employee[0].employee_id\" matches the globally stored employee ID",
   "keyword": "And "
 });
 formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieved_employee_ID_matches_the_globally_stored_employee_ID()"
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieved_employee_ID_matches_the_globally_stored_employee_ID(java.lang.String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "the retrieve data matches the data used to create an employee",
+  "name": "the retrieved data at \"employee\" matches the data used to create an employee with employee ID \"employee[0].employee_id\"",
+  "rows": [
+    {},
+    {}
+  ],
   "keyword": "And "
 });
 formatter.match({
-  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieve_data_matches_the_data_used_to_create_an_employee()"
+  "location": "com.hrms.API.Final.steps.APIFinalSteps.the_retrieved_data_at_matches_the_data_used_to_create_an_employee_with_employee_ID(java.lang.String,java.lang.String,io.cucumber.datatable.DataTable)"
 });
 formatter.result({
   "status": "passed"

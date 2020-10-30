@@ -7,6 +7,7 @@ import com.hrms.pages.LoginPageElements;
 import com.hrms.pages.SearchEmployeeListPageElements;
 import com.hrms.pages.ViewEmployeePageList;
 import com.hrms.pages.ViewPersonalDetailsPageElements;
+import com.hrms.utils.APICommonMethods;
 
 public class PageInitializer extends BaseClass{
 	
@@ -17,6 +18,7 @@ public class PageInitializer extends BaseClass{
 	protected static SearchEmployeeListPageElements searchEmp;
 	protected static ViewEmployeePageList viewEmp;
 	protected static JobTitlesPageElements jobTitle;
+	
 	/**
 	 * initializing the classes with web elements from pages package and it is called in setUp() from BaseClass class(testbase)
 	 */
@@ -29,5 +31,6 @@ public class PageInitializer extends BaseClass{
 		searchEmp = new SearchEmployeeListPageElements();
 		viewEmp = new ViewEmployeePageList();
 		jobTitle = new JobTitlesPageElements();
+		
 	}
 }

@@ -12,7 +12,7 @@ import io.restassured.specification.RequestSpecification;
 public class GenerateTokenSteps {
 
 //	String baseURI = RestAssured.baseURI = "http://18.232.148.34/syntaxapi/api"; //  http://
-	static String token;
+	public static String token;
 
 	@Given("a JWT id generated")
 	public void a_JWT_id_generated() {
@@ -26,7 +26,7 @@ public class GenerateTokenSteps {
 				.body("{\r\n" + "  \"name\": \"Pioneers\",\r\n" + "  \"email\": \"Pioneers_@json.com\",\r\n"
 						+ "  \"password\": \"ThePioneers__\"\r\n" + "}");
 
-		/** Storing response into generateTokenResponse */
+		/** Storing response into generateTokenResponse it is generated each time when the user credentials are sent */
 		Response generateTokenResponse = generateTokenRequest.when().post(APIConstants.GENERATE_TOKEN_URI); // "/generateToken.php"
 
 		/** Optional to print response */
