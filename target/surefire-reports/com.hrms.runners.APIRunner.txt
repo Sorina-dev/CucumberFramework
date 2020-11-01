@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: com.hrms.runners.TestRunner
+Test set: com.hrms.runners.APIRunner
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.32 s - in com.hrms.runners.TestRunner
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.147 s - in com.hrms.runners.APIRunner

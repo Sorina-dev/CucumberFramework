@@ -7,9 +7,9 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class) 
 @CucumberOptions(features = "src\\test\\resources\\features\\",
 		glue = "com/hrms/API/Final/steps", 
-		dryRun = false,	
+		dryRun= false,	
 		monochrome = true,
-		tags= "@APIworkflow", 
+		tags= "@APIworkflow or @CreateEmployees", 
 		strict = false, 
 		plugin = {"pretty",  
 				"html:target/cucumber-default-reports",

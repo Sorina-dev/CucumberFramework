@@ -41,7 +41,7 @@ $(document).ready(function() {
 
 
 
-<title>Cucumber Reports (no 1) - Tag: @smoke</title>
+<title>Cucumber Reports (no 1) - Tag: @CreateEmployees</title>
 
 </head>
 <body>
@@ -76,7 +76,7 @@ $(document).ready(function() {
     <tr class="info">
       <td>HRMS</td>
         <td>1</td>
-      <td>18 Sep 2020, 15:03</td>
+      <td>01 Nov 2020, 17:40</td>
     </tr>
   </tbody>
 </table>
@@ -128,19 +128,19 @@ $(document).ready(function() {
 
         <tbody>
         <tr>
-          <td class="tagname">@smoke</td>
-          <td      class="passed"    >2</td>
+          <td class="tagname">@CreateEmployees</td>
+          <td      class="passed"    >9</td>
           <td >0</td>
           <td >0</td>
           <td >0</td>
           <td >0</td>
-          <td class="total">2</td>
+          <td class="total">9</td>
 
-          <td  class="passed"    >1</td>
+          <td  class="passed"    >3</td>
           <td >0</td>
-          <td class="total">1</td>
+          <td class="total">3</td>
 
-          <td class="duration" data-value="719000000">0.719</td>
+          <td class="duration" data-value="997000000">0.997</td>
           <td class="passed">Passed</td>
         </tr>
         </tbody>
@@ -173,24 +173,24 @@ $(document).ready(function() {
 <div class="element">
     <div class="indention">
       <b>Feature:</b>
-      <a href="report-feature_1764534172.html">Login Functionality</a>
+      <a href="report-feature_1_1045717820.html">Creating Employees</a>
     </div>
 
 
 <div class="tags indention">
     <b>Tags:</b>
-       <a href="report-tag_4089311534.html">@smoke</a>
+       <a href="report-tag_4008704392.html">@CreateEmployees</a>
 </div>
 
 
-  <span class="lead-duration duration">0.719</span>
+  <span class="lead-duration duration">0.341</span>
 
 
   <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-1">
 
 <div class="brief passed">
-  <span class="keyword indention">Scenario</span>
-  <span class="name">Login with invalid credentials</span>
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Creating employees</span>
 
 
      <i class="chevron fa fa-fw"></i>
@@ -202,43 +202,11 @@ $(document).ready(function() {
   <div id="element-1" class="collapse collapsable-details ">
 
 
-  <div class="inner-level hooks-element-before">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#before-2">
-
-<div class="brief passed">
-  <span class="keyword indention">Hooks</span>
-  <span class="name"></span>
-
-
-     <i class="chevron fa fa-fw"></i>
-</div>
-
-    </div>
-
-    <div id="before-2" class="inner-level collapse collapsable-details ">
-        <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">Before</span>
-              <span class="location name">com.hrms.stepDefinitions.Hooks.startTest()</span>
-
-  <span class="lead-duration duration">8.684</span>
-
-          </div>
-
-
-
-
-
-
-
-        </div>
-    </div>
-  </div>
 
 
 
 <div class="steps inner-level">
-  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-3">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-2">
 
 <div class="brief passed">
   <span class="keyword indention">Steps</span>
@@ -250,15 +218,42 @@ $(document).ready(function() {
 
   </div>
 
-  <div id="steps-3" class="inner-level collapse collapsable-details ">
+  <div id="steps-2" class="inner-level collapse collapsable-details ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">a request is prepared to create employees</span>
+
+  <span class="lead-duration duration">0.003</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
       <div class="step">
 
 
 <div class="brief step-name-When passed">
   <span class="keyword indention">When</span>
-  <span class="name">login with invalid credentials</span>
+  <span class="name">employee data provided is <span class="argument">&quot;Bob&quot;</span>, <span class="argument">&quot;Bob&quot;</span>, <span class="argument">&quot;Bob&quot;</span>,<span class="argument">&quot;M&quot;</span>,<span class="argument">&quot;2000-07-11&quot;</span>,<span class="argument">&quot;Employee&quot;</span>,<span class="argument">&quot;Cloud Architect&quot;</span></span>
 
-  <span class="lead-duration duration">0.626</span>
+  <span class="lead-duration duration">0.022</span>
 
 </div>
 
@@ -283,9 +278,9 @@ $(document).ready(function() {
 
 <div class="brief step-name-Then passed">
   <span class="keyword indention">Then</span>
-  <span class="name">verify the error message</span>
+  <span class="name">employees are created</span>
 
-  <span class="lead-duration duration">0.093</span>
+  <span class="lead-duration duration">0.316</span>
 
 </div>
 
@@ -311,53 +306,288 @@ $(document).ready(function() {
 
 
 
-  <div class="inner-level hooks-element-after">
-    <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#after-4">
+
+  </div>
+</div>
+
+
+<div class="element">
+    <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_1_1045717820.html">Creating Employees</a>
+    </div>
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_4008704392.html">@CreateEmployees</a>
+</div>
+
+
+  <span class="lead-duration duration">0.332</span>
+
+
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-3">
 
 <div class="brief passed">
-  <span class="keyword indention">Hooks</span>
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Creating employees</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-3" class="collapse collapsable-details ">
+
+
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-4">
+
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
   <span class="name"></span>
 
 
      <i class="chevron fa fa-fw"></i>
 </div>
 
-    </div>
+  </div>
 
-    <div id="after-4" class="inner-level collapse collapsable-details ">
-        <div class="hook">
-          <div class="brief passed">
-            <span class="keyword indention">After</span>
-              <span class="location name">com.hrms.stepDefinitions.Hooks.endTest(io.cucumber.java.Scenario)</span>
-
-  <span class="lead-duration duration">1.337</span>
-
-          </div>
+  <div id="steps-4" class="inner-level collapse collapsable-details ">
+      <div class="step">
 
 
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">a request is prepared to create employees</span>
+
+  <span class="lead-duration duration">0.003</span>
+
+</div>
 
 
 
 
-  <div class="embeddings inner-level">
-  <div class="embedding indention">
-    <div data-toggle="collapse" data-target="#embedding-5" class="collapsable-control">
-      <a>Login with invalid credentials</a>
-      <a href="embeddings/embedding_141150766.png" download target="_blank">
-        <span class="download-button glyphicon glyphicon-download-alt"></span>
-      </a>
-    </div>
-    <div id="embedding-5" class="collapse collapsable-details ">
-      <div class="embedding-content">
-        <img src="embeddings/embedding_141150766.png">
+
+
+
+
+
+
+
+
+
+
+
+
       </div>
-    </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">employee data provided is <span class="argument">&quot;Gozde&quot;</span>, <span class="argument">&quot;Gozde&quot;</span>, <span class="argument">&quot;Gozde&quot;</span>,<span class="argument">&quot;F&quot;</span>,<span class="argument">&quot;2000-07-11&quot;</span>,<span class="argument">&quot;Independent contractor&quot;</span>,<span class="argument">&quot;API Tester&quot;</span></span>
+
+  <span class="lead-duration duration">0.004</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">employees are created</span>
+
+  <span class="lead-duration duration">0.325</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
   </div>
+</div>
+
+
+
+
+
+  </div>
+</div>
+
+
+<div class="element">
+    <div class="indention">
+      <b>Feature:</b>
+      <a href="report-feature_1_1045717820.html">Creating Employees</a>
+    </div>
+
+
+<div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_4008704392.html">@CreateEmployees</a>
+</div>
+
+
+  <span class="lead-duration duration">0.324</span>
+
+
+  <span data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#element-5">
+
+<div class="brief passed">
+  <span class="keyword indention">Scenario Outline</span>
+  <span class="name">Creating employees</span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
+  </span>
+  <div class="description indention"></div>
+
+  <div id="element-5" class="collapse collapsable-details ">
+
+
+
+
+
+<div class="steps inner-level">
+  <div data-toggle="collapse" class=" collapsed  collapsable-control" data-target="#steps-6">
+
+<div class="brief passed">
+  <span class="keyword indention">Steps</span>
+  <span class="name"></span>
+
+
+     <i class="chevron fa fa-fw"></i>
+</div>
+
   </div>
 
-        </div>
-    </div>
+  <div id="steps-6" class="inner-level collapse collapsable-details ">
+      <div class="step">
+
+
+<div class="brief step-name-Given passed">
+  <span class="keyword indention">Given</span>
+  <span class="name">a request is prepared to create employees</span>
+
+  <span class="lead-duration duration">0.003</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-When passed">
+  <span class="keyword indention">When</span>
+  <span class="name">employee data provided is <span class="argument">&quot;Irma&quot;</span>, <span class="argument">&quot;Irma&quot;</span>, <span class="argument">&quot;Irma&quot;</span>,<span class="argument">&quot;F&quot;</span>,<span class="argument">&quot;2000-07-11&quot;</span>,<span class="argument">&quot;Super Contractor&quot;</span>,<span class="argument">&quot;CEO&quot;</span></span>
+
+  <span class="lead-duration duration">0.004</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="step">
+
+
+<div class="brief step-name-Then passed">
+  <span class="keyword indention">Then</span>
+  <span class="name">employees are created</span>
+
+  <span class="lead-duration duration">0.317</span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
   </div>
+</div>
+
+
+
+
 
   </div>
 </div>

@@ -2,7 +2,9 @@ package com.hrms.API.Final.steps;
 
 import static io.restassured.RestAssured.*;
 
+import com.hrms.utils.APICommonMethods;
 import com.hrms.utils.APIConstants;
+import com.hrms.utils.CommonMethods;
 
 import io.cucumber.java.en.Given;
 import io.restassured.RestAssured;
@@ -22,11 +24,17 @@ public class GenerateTokenSteps {
 		 * Preparing request to generate token; a new token will be created every single
 		 * time this given() runs in the background of each scenario
 		 */
-		RequestSpecification generateTokenRequest = given().header("Content-Type", "application/json")
-				.body("{\r\n" + "  \"name\": \"Pioneers\",\r\n" + "  \"email\": \"Pioneers_@json.com\",\r\n"
-						+ "  \"password\": \"ThePioneers__\"\r\n" + "}");
+//		RequestSpecification generateTokenRequest = given().header("Content-Type", "application/json")
+//				.body("{\r\n" + "  \"name\": \"Pioneers\",\r\n" + "  \"email\": \"Pioneers_@json.com\",\r\n"
+//						+ "  \"password\": \"ThePioneers__\"\r\n" + "}");
+//		
+		RequestSpecification generateTokenRequest = APICommonMethods
+				.generateTokenRequest(CommonMethods.readJson(APIConstants.GENERATE_TOKEN_JSON));
 
-		/** Storing response into generateTokenResponse it is generated each time when the user credentials are sent */
+		/**
+		 * Storing response into generateTokenResponse it is generated each time when
+		 * the user credentials are sent
+		 */
 		Response generateTokenResponse = generateTokenRequest.when().post(APIConstants.GENERATE_TOKEN_URI); // "/generateToken.php"
 
 		/** Optional to print response */

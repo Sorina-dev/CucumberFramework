@@ -153,7 +153,8 @@ public class APIFinalSteps extends CommonMethods {
 		 * body by calling the object in feature file
 		 */
 		/** Retrieving expected data from feature file */
-		List<Map<String, String>> expectedData = dataTable.asMaps(String.class, String.class);
+		List<Map<String, String>> expectedData = dataTable.asMaps(String.class, String.class); 
+		//there any other version of doing String.class, we could do it the way we learned it is for the old version of java
 
 		/**
 		 * Retrieving actual data from response object in feature file and its value in
