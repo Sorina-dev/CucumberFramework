@@ -4,6 +4,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 
@@ -23,44 +25,49 @@ public class BaseClass {
 	 * by passing the CONFIGURATION_FILEPATH from Constants class(utils)
 	 */
 	  
-	public static void setUp() {             
-		
+	
+
+	public static void setUp() {
+
 		ConfigsReader.readProperties(Constants.CONFIGURATION_FILEPATH);
+		//Look at this line
+		String headless = ConfigsReader.getPropValue("headless");
 		
+
 		switch (ConfigsReader.getPropValue("browser").toLowerCase()) {
+
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		break;
+			ChromeOptions chromeOptions = new ChromeOptions();
+			if(headless.equalsIgnoreCase("true")) {
+				chromeOptions.setHeadless(true);
+				driver = new ChromeDriver(chromeOptions);
+			}else {
+				driver = new ChromeDriver();
+			}
+			break;
 		case "firefox":
 			WebDriverManager.firefoxdriver().setup();
-		driver = new FirefoxDriver();
-		break;
-		case "edge":
-			WebDriverManager.edgedriver().setup();
 			driver = new FirefoxDriver();
 			break;
+		case "edge":
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
+			break;
 		default:
-			throw new RuntimeException("Browser is not supported"); //if pass some wrong value it will throw an exception
+			throw new RuntimeException("Browser is not supported");
 		}
-		
-		driver.manage().window().maximize();
-		driver.manage().timeouts().pageLoadTimeout(Constants.IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
+
+		//driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Constants.IMPLICIT_WAIT_TIME, TimeUnit.SECONDS);
-		driver.navigate().to(ConfigsReader.getPropValue("applicationUrl"));
-		driver.navigate().refresh();
-		PageInitializer.initializePageObjects(); //calling the method initializePageObjects() from the PageInitializer class(testbase), to initialize all the classes from (pages)
-	}  
+		driver.get(ConfigsReader.getPropValue("applicationUrl"));
+		PageInitializer.initializePageObjects();
+	}
+
 	
-	/*
-	 * @method - to quit the browser, it quits only if the page is open
-	 */
-	   
 	public static void tearDown() {
-		if(driver != null) {
+		if (driver != null) {
 			driver.quit();
-			
-			
 		}
 	}
 	
