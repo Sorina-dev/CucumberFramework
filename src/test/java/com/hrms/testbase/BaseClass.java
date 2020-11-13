@@ -1,17 +1,17 @@
 package com.hrms.testbase;
-	
-	import java.util.concurrent.TimeUnit;
 
-	import org.openqa.selenium.WebDriver;
-	import org.openqa.selenium.chrome.ChromeDriver;
-	import org.openqa.selenium.chrome.ChromeOptions;
-	import org.openqa.selenium.edge.EdgeDriver;
-	import org.openqa.selenium.firefox.FirefoxDriver;
+import java.util.concurrent.TimeUnit;
 
-	import com.hrms.utils.ConfigsReader;
-	import com.hrms.utils.Constants;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-	import io.github.bonigarcia.wdm.WebDriverManager;
+import com.hrms.utils.ConfigsReader;
+import com.hrms.utils.Constants;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 	public class BaseClass {
 
