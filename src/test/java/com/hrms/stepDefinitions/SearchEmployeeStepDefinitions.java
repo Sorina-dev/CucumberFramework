@@ -1,6 +1,6 @@
 package com.hrms.stepDefinitions;
 import org.testng.asserts.SoftAssert;
-
+import org.junit.Assert;
 import com.hrms.utils.CommonMethods;
 
 import io.cucumber.java.en.Then;
