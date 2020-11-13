@@ -12,10 +12,12 @@ Then verify the error message
 
  #And is the continuation, so it will repeat the previous keyword in snippets
  
+ @smoke
  Scenario: Login with empty username
  When login with empty username
  Then verify the error message 
  
+ @smoke
  Scenario: Login with empty password
  When login with empty password
  Then verify the error message
